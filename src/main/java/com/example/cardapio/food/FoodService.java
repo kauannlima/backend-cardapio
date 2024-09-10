@@ -40,9 +40,12 @@ public class FoodService {
     public FoodDetailsDTO updateFood(Long foodId, FoodRequestDTO data) {
         Food food = repository.findById(foodId)
                 .orElseThrow(() -> new FoodNotFoundException("Food com id " + foodId + " não encontrada"));
-        food.setPrice(data.price());
-        food.setTitle(data.title());
-        food.setImage(data.image());
+
+        food.setPrice(data.price() == null ? food.getPrice() : data.price());
+        food.setTitle(data.title()== null  ? food.getTitle() : data.title());
+        food.setImage(data.image()== null  ? food.getImage() : data.image());
+
+
 
         repository.save(food);
 
