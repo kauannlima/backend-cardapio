@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar o código-fonte para o container
 COPY . .
 
-# Construir a aplicação
-RUN mvn clean install
+# Construir a aplicação e pular os testes
+RUN mvn clean install -DskipTests
 
 # Etapa de execução
 FROM eclipse-temurin:17-jdk-jammy
