@@ -1,9 +1,23 @@
-FROM tomcat:9.0-jdk17
+# Imagem base para construção
+FROM maven:3.9.0-openjdk-17 AS build
 
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+# Configurar diretório de trabalho
+WORKDIR /app
 
-COPY target/cardapio-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+# Copiar o código-fonte para o container
+COPY . .
 
+# Construir a aplicação
+RUN mvn clean install
+
+# Imagem base para execução
+FROM openjdk:17-jdk-slim
+
+# Expor a porta que a aplicação usará
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+# Copiar o arquivo WAR da etapa de build
+COPY --from=build /app/target/cardapio-0.0.1-SNAPSHOT.war /app/app.war
+
+# Definir o ponto de entrada
+ENTRYPOINT ["java", "-jar", "/app/app.war"]
