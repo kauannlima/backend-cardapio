@@ -1,4 +1,4 @@
-# Imagem base para construção
+# Etapa de construção
 FROM maven:3.9.0-openjdk-17 AS build
 
 # Configurar diretório de trabalho
@@ -10,7 +10,7 @@ COPY . .
 # Construir a aplicação
 RUN mvn clean install
 
-# Imagem base para execução
+# Etapa de execução
 FROM openjdk:17-jdk-slim
 
 # Expor a porta que a aplicação usará
