@@ -1,5 +1,5 @@
 # Etapa de construção
-FROM maven:3.9.0-openjdk-17 AS build
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 
 # Configurar diretório de trabalho
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . .
 RUN mvn clean install
 
 # Etapa de execução
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
 # Expor a porta que a aplicação usará
 EXPOSE 8080
