@@ -1,6 +1,6 @@
-package com.example.cardapio.food;
+package com.example.cardapio.domain.food;
 
-import com.example.cardapio.food.dto.FoodRequestDTO;
+import com.example.cardapio.domain.food.dto.FoodRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,10 +1,10 @@
-package com.example.cardapio.food;
+package com.example.cardapio.domain.food;
 
 import com.example.cardapio.exception.FoodNotFoundException;
-import com.example.cardapio.food.dto.FoodDetailsDTO;
-import com.example.cardapio.food.dto.FoodIdDTO;
-import com.example.cardapio.food.dto.FoodRequestDTO;
-import com.example.cardapio.food.dto.FoodResponseDTO;
+import com.example.cardapio.domain.food.dto.FoodDetailsDTO;
+import com.example.cardapio.domain.food.dto.FoodIdDTO;
+import com.example.cardapio.domain.food.dto.FoodRequestDTO;
+import com.example.cardapio.domain.food.dto.FoodResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

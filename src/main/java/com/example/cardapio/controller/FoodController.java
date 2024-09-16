@@ -1,13 +1,13 @@
 package com.example.cardapio.controller;
 
-import com.example.cardapio.food.*;
-import com.example.cardapio.food.dto.FoodDetailsDTO;
-import com.example.cardapio.food.dto.FoodIdDTO;
-import com.example.cardapio.food.dto.FoodRequestDTO;
-import com.example.cardapio.food.dto.FoodResponseDTO;
+import com.example.cardapio.domain.food.Food;
+import com.example.cardapio.domain.food.FoodService;
+import com.example.cardapio.domain.food.dto.FoodDetailsDTO;
+import com.example.cardapio.domain.food.dto.FoodIdDTO;
+import com.example.cardapio.domain.food.dto.FoodRequestDTO;
+import com.example.cardapio.domain.food.dto.FoodResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

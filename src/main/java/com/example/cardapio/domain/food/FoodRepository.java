@@ -1,4 +1,4 @@
-package com.example.cardapio.food;
+package com.example.cardapio.domain.food;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

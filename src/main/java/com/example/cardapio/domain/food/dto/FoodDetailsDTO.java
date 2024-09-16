@@ -1,6 +1,6 @@
-package com.example.cardapio.food.dto;
+package com.example.cardapio.domain.food.dto;
 
-import com.example.cardapio.food.Food;
+import com.example.cardapio.domain.food.Food;
 
 public record FoodDetailsDTO(
         String title,
