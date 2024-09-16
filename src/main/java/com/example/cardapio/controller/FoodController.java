@@ -1,7 +1,7 @@
 package com.example.cardapio.controller;
 
 import com.example.cardapio.domain.food.Food;
-import com.example.cardapio.domain.food.FoodService;
+import com.example.cardapio.service.FoodService;
 import com.example.cardapio.domain.food.dto.FoodDetailsDTO;
 import com.example.cardapio.domain.food.dto.FoodIdDTO;
 import com.example.cardapio.domain.food.dto.FoodRequestDTO;
