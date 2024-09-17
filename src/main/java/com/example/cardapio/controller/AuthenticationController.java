@@ -1,6 +1,9 @@
 package com.example.cardapio.controller;
 
+import com.example.cardapio.domain.user.User;
 import com.example.cardapio.domain.user.dto.AuthenticationDTO;
+import com.example.cardapio.domain.user.dto.RegisterDTO;
+import com.example.cardapio.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +11,7 @@ import jakarta.validation.Valid;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +24,26 @@ public class AuthenticationController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private UserRepository repository;
+
     @PostMapping ("/login")
     public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data){
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.passdword());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
         return  ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/register")
+    public  ResponseEntity register(@RequestBody @Valid RegisterDTO data){
+        if (this.repository.findByLogin(data.login()) != null) return ResponseEntity.badRequest().build();
+
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.passdword());
+        User newUser = new User(data.login(), encryptedPassword, data.role());
+
+        this.repository.save(newUser);
+
+        return ResponseEntity.ok().build();
     }
 }
