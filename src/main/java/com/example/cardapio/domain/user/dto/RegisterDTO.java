@@ -4,7 +4,7 @@ import com.example.cardapio.domain.user.UserRole;
 
 public record RegisterDTO(
         String login,
-        String passdword,
+        String password,
         UserRole role
 ) {
 }

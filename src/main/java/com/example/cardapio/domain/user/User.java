@@ -28,9 +28,17 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(nullable = false)
     private String id;
+
+    @Column(nullable = false)
     private String login;
+
+    @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
     @Override
