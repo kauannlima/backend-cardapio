@@ -28,6 +28,13 @@ public class FoodController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/cliente")
+    public  ResponseEntity<List<FoodResponseDTO>> getAllCliente() {
+        List<FoodResponseDTO> foodList = service.getAll();
+        return ResponseEntity.ok(foodList);
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{foodId}")
     public ResponseEntity<FoodDetailsDTO> getFoodById(@PathVariable Long foodId) {
         FoodDetailsDTO food = service.getFoodById(foodId);
