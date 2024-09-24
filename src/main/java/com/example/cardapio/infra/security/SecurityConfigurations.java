@@ -40,7 +40,7 @@ public class SecurityConfigurations {
                     .authorizeHttpRequests(authorize -> authorize
                             .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                             .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                            .requestMatchers(HttpMethod.POST, "/food/cliente").permitAll()
+                            .requestMatchers(HttpMethod.GET, "/food/cliente").permitAll()
                             .requestMatchers(HttpMethod.DELETE, "/food").hasRole("ADMIN")
                             .anyRequest().authenticated()
                     )
