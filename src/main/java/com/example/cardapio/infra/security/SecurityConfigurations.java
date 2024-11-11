@@ -29,7 +29,8 @@ public class SecurityConfigurations {
                         var config = new org.springframework.web.cors.CorsConfiguration();
                         config.setAllowedOrigins(java.util.Arrays.asList(
                                 "http://localhost:5173",
-                                "https://frontend-cardapio.onrender.com"
+                                "https://frontend-cardapio.onrender.com",
+                                "https://frontend-cardapio-two.vercel.app"
                         ));
                         config.setAllowedMethods(java.util.Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                         config.setAllowedHeaders(java.util.Collections.singletonList("*"));
