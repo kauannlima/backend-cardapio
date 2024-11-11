@@ -16,8 +16,12 @@ Antes de iniciar o backend, é necessário configurar o banco de dados. Crie um 
 CREATE DATABASE cardapio-db;
 ```
 
+## Link para o site em produção
 
+Acesse a aplicação em produção: [Cardapio Dev](https://frontend-cardapio.onrender.com)
 
 ## Licença
 
 Este projeto é licenciado sob a [Licença MIT](LICENSE).
+
+
