@@ -40,6 +40,7 @@ public class SecurityConfigurations {
                     .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                     .authorizeHttpRequests(authorize -> authorize
                             .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
+                            .requestMatchers(HttpMethod.GET, "/connect").permitAll()
                             .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                             .requestMatchers(HttpMethod.GET, "/food/cliente").permitAll()
                             .requestMatchers(HttpMethod.DELETE, "/food/*").hasRole("ADMIN")
