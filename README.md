@@ -20,6 +20,8 @@ CREATE DATABASE cardapio-db;
 
 Acesse a aplicação em produção: [Cardapio Dev](https://frontend-cardapio.onrender.com)
 
+⚠️ O primeiro acesso pode levar alguns segundos devido à hibernação da hospedagem gratuita.
+
 ## Licença
 
 Este projeto é licenciado sob a [Licença MIT](LICENSE).
